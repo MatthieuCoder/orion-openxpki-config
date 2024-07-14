@@ -39,7 +39,7 @@ token:
   ca-signer:
     inherit: default
     key_store: DATAPOOL
-    key: "[% ALIAS %]"
+    key: /etc/openxpki/ca/[% PKI_REALM %]/[% ALIAS %].pem
 
   vault:
     inherit: default
