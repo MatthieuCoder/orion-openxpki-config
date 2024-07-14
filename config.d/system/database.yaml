@@ -1,11 +1,11 @@
 main:
-    debug: 0
+    debug: 1
     # This requires libdbd-mysql-perl - see notes regarding driver at
     # https://openxpki.readthedocs.io/en/latest/reference/configuration/server.html
     type: MariaDB
     name: openxpki
-    #host: localhost
-    #port: 3306
+    host: db
+    port: 3306
     user: openxpki
     passwd: openxpki
 
