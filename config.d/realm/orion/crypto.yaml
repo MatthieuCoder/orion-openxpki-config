@@ -15,7 +15,7 @@ token:
     # Template to create key, available vars are
     # ALIAS (ca-signer-1), GROUP (ca-signer), GENERATION (1)
     # KEY_IDENTIFIER (00:AA:BB...), IDENTIFIER (aGSNY1Z...)
-    key: /etc/openxpki/ca/[% PKI_REALM %]/[% ALIAS %].pem
+    key: /etc/openxpki/ca/[% ALIAS %].pem
 
     # possible values are OpenSSL, nCipher, LunaCA
     engine: OpenSSL
@@ -38,7 +38,8 @@ token:
   # use ALIAS as key as it makes debug and management easier
   ca-signer:
     inherit: default
-    key: /etc/openxpki/ca/[% PKI_REALM %]/[% ALIAS %].pem
+    key_store: DATAPOOL
+    key: "[% ALIAS %]"
 
   vault:
     inherit: default
