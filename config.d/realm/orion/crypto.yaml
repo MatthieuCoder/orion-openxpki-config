@@ -38,7 +38,6 @@ token:
   # use ALIAS as key as it makes debug and management easier
   ca-signer:
     inherit: default
-    key_store: DATAPOOL
     key: /etc/openxpki/ca/[% PKI_REALM %]/[% ALIAS %].pem
 
   vault:
