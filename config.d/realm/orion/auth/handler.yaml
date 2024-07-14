@@ -1,0 +1,23 @@
+# Those stacks are usually required so you should not remove them
+Anonymous:
+    type: Anonymous
+    label: Anonymous
+
+System:
+    type: Anonymous
+    role: System
+
+# Using the default config this allows a user login with ANY certificate
+# issued by the democa which has the client auth keyUsage bit set
+# the commonName is used as username!
+Certificate:
+    type: ClientX509
+    role: User
+    arg: CN
+    trust_anchor:
+        realm: orion
+
+# Read the userdata from a YAML file defined in auth/connector.yaml
+LocalPassword:
+    type: Password
+    user@: connector:auth.connector.userdb

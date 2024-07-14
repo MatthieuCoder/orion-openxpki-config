@@ -11,4 +11,4 @@
 
 userdb:
     class: Connector::Proxy::YAML
-    LOCATION: /home/pkiadm/userdb.yaml
+    LOCATION: /userdb.yaml
