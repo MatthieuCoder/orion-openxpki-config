@@ -18,7 +18,7 @@ style:
                 - comment
 
         subject:
-            dn: CN=[% hostname %][% IF application_name %]:[% application_name %][% END %],DC=Test Deployment,DC=OpenXPKI,DC=org
+            dn: CN=[% hostname %][% IF application_name %]:[% application_name %][% END %],OU=Members Certificates,O=Orion,DC=FR
 
         metadata:
             requestor: "[% requestor_realname %]"
@@ -28,7 +28,7 @@ style:
 
     enroll:
         subject:
-            dn: CN=[% CN.0 %],DC=Test Deployment,DC=OpenXPKI,DC=org
+            dn: CN=[% CN.0 %],OU=Members Certificates,O=Orion,DC=FR
 
         metadata:
             server_id: "[% data.server_id %]"

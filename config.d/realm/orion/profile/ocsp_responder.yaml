@@ -17,7 +17,7 @@ style:
                 - comment
 
         subject:
-            dn: CN=[% hostname %]:ocsp,DC=Test Deployment,DC=OpenXPKI,DC=org
+            dn: CN=[% hostname %]:ocsp,OU=Members Certificates,O=Orion,DC=FR
 
         metadata:
             requestor: "[% requestor_realname %]"
@@ -27,7 +27,7 @@ style:
 
     enroll:
         subject:
-            dn: CN=[% CN.0 %],DC=Test Deployment,DC=OpenXPKI,DC=org
+            dn: CN=[% CN.0 %],OU=Members Certificates,O=Orion,DC=FR
 
         metadata:
             server_id: "[% data.server_id %]"

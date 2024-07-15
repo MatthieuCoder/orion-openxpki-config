@@ -16,6 +16,7 @@ key:
     # Supported encryption algorithms (as taken by openssl)
     enc:
       - aes256
+      - aes512
 
     # one of escrow, server, client, both
     # escrow is not implemented in workflows, yet!
@@ -27,7 +28,7 @@ key:
           - 3072
           - 2048
           - 4096
-          - 2048:4096
+          - 2048:8192
 
     ec:
         # those names are used for validation and to render the
@@ -55,6 +56,7 @@ key:
         key_length:
           - 2048
           - 4096
+          - 8192
 
 validity:
     notafter: +01
@@ -93,12 +95,12 @@ extensions:
     crl_distribution_points:
         critical: 0
         uri:
-            - http://pki.example.com/download/[% ISSUER.CN.0.replace(' ','_') %].crl
+            - http://pki.orionet.re/download/[% ISSUER.CN.0.replace(' ','_') %].crl
 
     authority_info_access:
         critical: 0
-        ca_issuers: http://pki.example.com/download/[% ISSUER.CN.0.replace(' ','_') %].cer
-        ocsp: http://ocsp.example.com/
+        ca_issuers: http://pki.orionet.re/download/[% ISSUER.CN.0.replace(' ','_') %].cer
+        ocsp: http://ocsp.orionet.re/
 
     policy_identifier:
         critical: 0
@@ -110,8 +112,7 @@ extensions:
         1.2.3.4:
           # CPS/Notice can be scalar or list
           cps:
-            - http://pki.example.com/cps.html
-            - http://pki.example.com/cps.html
+            - http://pki.orionet.re/cps.html
           user_notice: This is a comment for policy oid 1.2.3.4
 
 # I18N Placeholders for key settings
