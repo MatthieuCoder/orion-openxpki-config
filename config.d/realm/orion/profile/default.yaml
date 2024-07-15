@@ -104,16 +104,6 @@ extensions:
 
     policy_identifier:
         critical: 0
-        # you can combine both notations but do not use the same OID twice
-        # short notation, if you just need OIDs
-        # this is the globally defined "any policy"
-        # oid: 2.5.29.32.0
-        # for OIDs with CPS/Notice, put the OID as key.
-        1.2.3.4:
-          # CPS/Notice can be scalar or list
-          cps:
-            - http://pki.orionet.re/cps.html
-          user_notice: This is a comment for policy oid 1.2.3.4
 
 # I18N Placeholders for key settings
 # I18N_OPENXPKI_UI_KEY_ALG

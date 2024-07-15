@@ -1,6 +1,5 @@
 # Where to publish entity certificates
 entity:
-    ldap@: connector:publishing.connectors.ldap-ext
     disk@: connector:publishing.connectors.local
 
 crl:
@@ -11,27 +10,6 @@ cacert:
     disk-der@: connector:publishing.connectors.cacert-der
 
 connectors:
-    ldap-ext:
-        class: Connector::Proxy::Net::LDAP::Single
-        LOCATION: ldap://localhost:389
-        base: ou=people,dc=mycompany,dc=com
-        filter: (&(mail=[% ARGS.0 %]) (objectCategory=person))
-        binddn: cn=admin,dc=mycompany,dc=com
-        password: admin
-        attrmap:
-            der: usercertificate;binary
-
-        create:
-            basedn: ou=people,dc=mycompany,dc=com
-            rdnkey: cn
-
-        schema:
-            cn:
-                objectclass: inetOrgPerson
-                values:
-                    sn: copy:self
-                    ou: IT Department
-
     local:
         class: Connector::Builtin::File::Path
         LOCATION: /tmp/

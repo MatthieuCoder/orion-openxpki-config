@@ -3,4 +3,4 @@
 
 orion:
     label: Orion Trust Authority
-    baseurl: https://pki.orionet.re/openxpki/
+    baseurl: https://pki.orionet.re/
