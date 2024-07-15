@@ -19,7 +19,9 @@ style:
 
         subject:
             dn: CN=[% hostname %][% IF application_name %]:[% application_name %][% END %],OU=Members Certificates,O=Orion,DC=FR
-
+            san:
+              DNS:
+                  - "[% hostname.lower %]"
         metadata:
             requestor: "[% requestor_realname %]"
             email: "[% requestor_email %]"
