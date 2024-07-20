@@ -27,7 +27,7 @@ Certificate:
     sign:
         # This is the public key matching the private one given in webui/default.conf
         # Use "openssl pkey -pubout" to create the required string from the private key
-        # key: MFkwEwYHK.......pK7qV/FmDw==
+        key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEJvjzfod/ydxeKnD5PNhKHeTypVbEozXcHJzATPVFdKKgA5f4hZB8aszHSx1axKyxocfvSoaomGMHE7bl5DDaPw==
 
 # The default handler for automated interfaces, hidden from the UI
 _System:
