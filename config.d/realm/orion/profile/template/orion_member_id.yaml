@@ -1,0 +1,10 @@
+id: orion_member_id
+label: Numéro de membre Orion
+description: Votre numéro unique au sein de orion
+type: text
+preset: "[% CN.0.replace(':.*','') %]"
+match: \A [0-9] \z
+width: 3
+placeholder: 1
+renew: keep
+

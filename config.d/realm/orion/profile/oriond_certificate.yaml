@@ -1,6 +1,6 @@
 # The name of the file equals the name of the profile
 
-label: I18N_OPENXPKI_UI_PROFILE_TLS_CLIENT_LABEL
+label: OrionD Member Certificate
 
 style:
     00_basic_style:
@@ -8,7 +8,7 @@ style:
         description: I18N_OPENXPKI_UI_PROFILE_BASIC_STYLE_DESC
         ui:
             subject:
-                - hostname
+                - orion_member_id
                 - application_name
             info:
                 - requestor_realname
@@ -18,23 +18,15 @@ style:
                 - comment
 
         subject:
-            dn: CN=[% hostname %][% IF application_name %]:[% application_name %][% END %],OU=Members Certificates,O=Orion,DC=FR
+            dn: CN=[% orion_member_id %].member.orionet.re:oriond,OU=Members Certificates,O=Orion,DC=FR
             san:
               DNS:
-                  - "[% hostname.lower %]"
+                  - "[% orion_member_id.lower %].member.orionet.re"
         metadata:
             requestor: "[% requestor_realname %]"
             email: "[% requestor_email %]"
             owner_contact: "[% owner_contact || requestor_email %]"
-            entity: "[% hostname FILTER lower %]"
-
-    enroll:
-        subject:
-            dn: CN=[% CN.0 %],OU=Members Certificates,O=Orion,DC=FR
-
-        metadata:
-            server_id: "[% data.server_id %]"
-            entity: "[% CN.0.replace(':.*','') FILTER lower %]"
+            entity: "[% orion_member_id FILTER lower %]"
 
 # Profile extensions - set 0/1 as needed
 extensions:
