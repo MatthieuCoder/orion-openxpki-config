@@ -4,11 +4,6 @@
 # suitable for production use!
 
 # Allows Anonymous Login (also from the WebUI!)
-Anonymous:
-    label: Anonymous
-    description: Access for as guests without credentials
-    handler: Anonymous
-    type: anon
 
 # Regular login for users via an external password database defined
 # in handler.yaml as "LocalPassword"
