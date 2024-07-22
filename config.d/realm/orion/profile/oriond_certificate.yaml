@@ -2,6 +2,20 @@
 
 label: OrionD Member Certificate
 
+key:
+    alg:
+      - ec
+
+    enc:
+      - aes256
+
+    generate: both
+    ec:
+        curve_name:
+          - prime256v1
+          - secp384r1
+          - secp521r1
+
 style:
     00_basic_style:
         label: I18N_OPENXPKI_UI_PROFILE_BASIC_STYLE_LABEL
