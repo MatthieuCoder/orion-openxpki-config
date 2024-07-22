@@ -23,7 +23,6 @@ style:
         ui:
             subject:
                 - orion_member_id
-                - application_name
             info:
                 - requestor_realname
                 - requestor_email
